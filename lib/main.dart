@@ -6,11 +6,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
+  const MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    String dummyDescription ="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
             'Hello Michael'
           ),
         ),
-        body: const DescriptionPlace(),
+        body: DescriptionPlace("Las Vegas", 4, dummyDescription),
       ),
     );
   }

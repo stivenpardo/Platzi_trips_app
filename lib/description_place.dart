@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
-  const DescriptionPlace({Key? key}) : super(key: key);
+
+  String namePlace;
+  int starts;
+  String descriptionPace;
+
+  DescriptionPlace(this.namePlace, this.starts, this.descriptionPace, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +27,12 @@ class DescriptionPlace extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(
             top: 320.0,
-            left: 20.0,
+            left: 30.0,
             right: 20.0
           ),
-          child: const Text(
-            "Duwili Ella",
-            style: TextStyle(
+          child: Text(
+            namePlace,
+            style: const TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.w900
             ),
@@ -46,6 +51,28 @@ class DescriptionPlace extends StatelessWidget {
       ],
     );
 
-    return titleStars;
+    final textDescription = Container(
+      margin: const EdgeInsets.only(
+        top: 20.0,
+        left: 30.0,
+        right: 60
+      ),
+      child: Text(
+        descriptionPace,
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Color(0XFF56575a)
+        ),
+        textAlign: TextAlign.left
+      ),
+    );
+
+    return Column(
+      children: <Widget>[
+        titleStars,
+        textDescription,
+      ],
+    );
   }
 }
